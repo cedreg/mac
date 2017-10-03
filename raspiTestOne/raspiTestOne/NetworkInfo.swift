@@ -11,29 +11,52 @@ import SystemConfiguration.CaptiveNetwork
 
 class NetworkInfo : NSObject {
     
-    func getSSID() -> Dictionary<String, String>? {
-        
+    private var doc: Dictionary <String, String> = Dictionary <String, String>()
+
+    private func saveNWData(){
         if let interfaces = CNCopySupportedInterfaces() as? [String] {
             if interfaces.count < 1 {
-                return nil
+                doc.removeAll()
             }else{
                 if let intefaceInfos = CNCopyCurrentNetworkInfo(interfaces[0] as CFString){
                     let interfaceData = intefaceInfos as! Dictionary <String, AnyObject>
                     
-                    var doc: Dictionary <String, String> = Dictionary <String, String>()
                     for data in interfaceData {
                         doc[data.key] = data.value as? String
                         //print ("__\(data)")
                     }
-                    return doc
                 }else {
-                    return nil
+                    doc.removeAll()
                 }
             }
         }else{
+            doc.removeAll()
+        }
+    }
+    
+    func getSSID() -> String? {
+        if !doc.isEmpty {
+            return doc["SSID"]
+        } else {
             return nil
         }
     }
     
+    func getBSSID() -> String?{
+        if !doc.isEmpty {
+            return doc["BSSID"]
+        } else {
+            return nil
+        }
+    }
+    
+    func isConnected() -> Bool {
+        saveNWData()
+        if !doc.isEmpty{
+            return true
+        } else {
+            return false
+        }
+    }
     
 }

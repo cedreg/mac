@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00667AF11F83D91700703CD3 /* InternalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00667AF01F83D91700703CD3 /* InternalPageViewController.swift */; };
+		00667AF31F83E0CF00703CD3 /* ExternalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */; };
 		00B5DF561F8242ED00D716CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5DF551F8242ED00D716CF /* AppDelegate.swift */; };
-		00B5DF581F8242ED00D716CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5DF571F8242ED00D716CF /* ViewController.swift */; };
+		00B5DF581F8242ED00D716CF /* NetwrokViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5DF571F8242ED00D716CF /* NetwrokViewController.swift */; };
 		00B5DF5B1F8242ED00D716CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B5DF591F8242ED00D716CF /* Main.storyboard */; };
 		00B5DF5D1F8242ED00D716CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B5DF5C1F8242ED00D716CF /* Assets.xcassets */; };
 		00B5DF601F8242ED00D716CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B5DF5E1F8242ED00D716CF /* LaunchScreen.storyboard */; };
@@ -16,9 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00667AF01F83D91700703CD3 /* InternalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalPageViewController.swift; sourceTree = "<group>"; };
+		00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPageViewController.swift; sourceTree = "<group>"; };
 		00B5DF521F8242ED00D716CF /* raspiTestOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raspiTestOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5DF551F8242ED00D716CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00B5DF571F8242ED00D716CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00B5DF571F8242ED00D716CF /* NetwrokViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokViewController.swift; sourceTree = "<group>"; };
 		00B5DF5A1F8242ED00D716CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00B5DF5C1F8242ED00D716CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00B5DF5F1F8242ED00D716CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				00B5DF591F8242ED00D716CF /* Main.storyboard */,
-				00B5DF571F8242ED00D716CF /* ViewController.swift */,
+				00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */,
+				00667AF01F83D91700703CD3 /* InternalPageViewController.swift */,
+				00B5DF571F8242ED00D716CF /* NetwrokViewController.swift */,
 				00B5DF681F8243F200D716CF /* NetworkInfo.swift */,
 				00B5DF671F8242FE00D716CF /* Supporting Files */,
 			);
@@ -147,9 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B5DF581F8242ED00D716CF /* ViewController.swift in Sources */,
+				00667AF11F83D91700703CD3 /* InternalPageViewController.swift in Sources */,
+				00B5DF581F8242ED00D716CF /* NetwrokViewController.swift in Sources */,
 				00B5DF691F8243F200D716CF /* NetworkInfo.swift in Sources */,
 				00B5DF561F8242ED00D716CF /* AppDelegate.swift in Sources */,
+				00667AF31F83E0CF00703CD3 /* ExternalPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
