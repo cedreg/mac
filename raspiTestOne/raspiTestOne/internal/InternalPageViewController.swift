@@ -14,13 +14,17 @@ class InternalPageViewController: UIPageViewController, UIPageViewControllerData
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         let vc1 = sb.instantiateViewController(withIdentifier: "internalAccessVC")
+        let vc2 = sb.instantiateViewController(withIdentifier: "internalHostVC")
+        let vc3 = sb.instantiateViewController(withIdentifier: "internalDispatcherVC")
         
-        return [vc1]
+        return [vc1, vc2, vc3]
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.dataSource = self
+        
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }

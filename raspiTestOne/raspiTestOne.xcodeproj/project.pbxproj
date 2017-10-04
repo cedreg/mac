@@ -15,6 +15,10 @@
 		00B5DF5D1F8242ED00D716CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B5DF5C1F8242ED00D716CF /* Assets.xcassets */; };
 		00B5DF601F8242ED00D716CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B5DF5E1F8242ED00D716CF /* LaunchScreen.storyboard */; };
 		00B5DF691F8243F200D716CF /* NetworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5DF681F8243F200D716CF /* NetworkInfo.swift */; };
+		00D7A0F61F84CA2100932A0D /* HostPropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0F51F84CA2100932A0D /* HostPropViewController.swift */; };
+		00D7A0F81F84CA7B00932A0D /* HostProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0F71F84CA7B00932A0D /* HostProperties.swift */; };
+		00D7A0FA1F84DA9C00932A0D /* InternalHostProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0F91F84DA9C00932A0D /* InternalHostProperties.swift */; };
+		00D7A0FC1F8518ED00932A0D /* DispatcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0FB1F8518ED00932A0D /* DispatcherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		00B5DF5F1F8242ED00D716CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00B5DF611F8242ED00D716CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B5DF681F8243F200D716CF /* NetworkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
+		00D7A0F51F84CA2100932A0D /* HostPropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPropViewController.swift; sourceTree = "<group>"; };
+		00D7A0F71F84CA7B00932A0D /* HostProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProperties.swift; sourceTree = "<group>"; };
+		00D7A0F91F84DA9C00932A0D /* InternalHostProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalHostProperties.swift; sourceTree = "<group>"; };
+		00D7A0FB1F8518ED00932A0D /* DispatcherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				00B5DF591F8242ED00D716CF /* Main.storyboard */,
-				00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */,
-				00667AF01F83D91700703CD3 /* InternalPageViewController.swift */,
+				00D7A0F41F84C9D300932A0D /* external */,
+				00D7A0F31F84C9C700932A0D /* internal */,
 				00B5DF571F8242ED00D716CF /* NetwrokViewController.swift */,
 				00B5DF681F8243F200D716CF /* NetworkInfo.swift */,
 				00B5DF671F8242FE00D716CF /* Supporting Files */,
@@ -79,6 +87,26 @@
 				00B5DF611F8242ED00D716CF /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00D7A0F31F84C9C700932A0D /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				00667AF01F83D91700703CD3 /* InternalPageViewController.swift */,
+				00D7A0F51F84CA2100932A0D /* HostPropViewController.swift */,
+				00D7A0F71F84CA7B00932A0D /* HostProperties.swift */,
+				00D7A0F91F84DA9C00932A0D /* InternalHostProperties.swift */,
+				00D7A0FB1F8518ED00932A0D /* DispatcherViewController.swift */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		00D7A0F41F84C9D300932A0D /* external */ = {
+			isa = PBXGroup;
+			children = (
+				00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */,
+			);
+			path = external;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,11 +181,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D7A0F81F84CA7B00932A0D /* HostProperties.swift in Sources */,
 				00667AF11F83D91700703CD3 /* InternalPageViewController.swift in Sources */,
+				00D7A0F61F84CA2100932A0D /* HostPropViewController.swift in Sources */,
 				00B5DF581F8242ED00D716CF /* NetwrokViewController.swift in Sources */,
 				00B5DF691F8243F200D716CF /* NetworkInfo.swift in Sources */,
+				00D7A0FC1F8518ED00932A0D /* DispatcherViewController.swift in Sources */,
 				00B5DF561F8242ED00D716CF /* AppDelegate.swift in Sources */,
 				00667AF31F83E0CF00703CD3 /* ExternalPageViewController.swift in Sources */,
+				00D7A0FA1F84DA9C00932A0D /* InternalHostProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
