@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0038C6E41F8A73B300E8F274 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038C6E31F8A73B300E8F274 /* HTTPManager.swift */; };
 		00667AF11F83D91700703CD3 /* InternalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00667AF01F83D91700703CD3 /* InternalPageViewController.swift */; };
 		00667AF31F83E0CF00703CD3 /* ExternalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */; };
 		00B5DF561F8242ED00D716CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5DF551F8242ED00D716CF /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0038C6E31F8A73B300E8F274 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		00667AF01F83D91700703CD3 /* InternalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalPageViewController.swift; sourceTree = "<group>"; };
 		00667AF21F83E0CF00703CD3 /* ExternalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPageViewController.swift; sourceTree = "<group>"; };
 		00B5DF521F8242ED00D716CF /* raspiTestOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raspiTestOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 				00D7A0F31F84C9C700932A0D /* internal */,
 				00B5DF571F8242ED00D716CF /* NetwrokViewController.swift */,
 				00B5DF681F8243F200D716CF /* NetworkInfo.swift */,
+				0038C6E31F8A73B300E8F274 /* HTTPManager.swift */,
 				00B5DF671F8242FE00D716CF /* Supporting Files */,
 			);
 			path = raspiTestOne;
@@ -142,6 +145,11 @@
 					00B5DF511F8242ED00D716CF = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -188,6 +196,7 @@
 				00B5DF691F8243F200D716CF /* NetworkInfo.swift in Sources */,
 				00D7A0FC1F8518ED00932A0D /* DispatcherViewController.swift in Sources */,
 				00B5DF561F8242ED00D716CF /* AppDelegate.swift in Sources */,
+				0038C6E41F8A73B300E8F274 /* HTTPManager.swift in Sources */,
 				00667AF31F83E0CF00703CD3 /* ExternalPageViewController.swift in Sources */,
 				00D7A0FA1F84DA9C00932A0D /* InternalHostProperties.swift in Sources */,
 			);

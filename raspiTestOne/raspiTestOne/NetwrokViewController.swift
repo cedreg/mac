@@ -41,16 +41,13 @@ class NetworkViewController: UIViewController {
         } else {
             infoLabel.text? = "No Wireless Connection.\nConnect your phone to a accesspoint."
         }
- 
-        
-       /* if let myName = userSettings.object(forKey: "name"){
-            infoLabel.text?.append(myName as! String)
-        }*/
     }
 
     
     @IBAction func selectNWBtn(_ sender: UIButton) {
-        //userSettings.set("Cedric" as AnyObject, forKey: "name")
+        let HTTP = HTTPManager()
+        
+        HTTP.requestPresenceCount("http://192.168.178.162:8080/rest/items/DEMONUM")
     }
     
     

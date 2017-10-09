@@ -9,12 +9,14 @@
 import Foundation
 
 class HostProperties : NSObject {
+    
+    var userSettings: UserDefaults = UserDefaults()
   
     internal var hostInfo: Dictionary <String, String> = Dictionary <String, String>()
     
     func addInfo(declaration: String, value: String) -> Bool{
-        switch value {
-        case "HostName", "Prot", "Sitename", "Item":
+        switch declaration {
+        case "HostName", "Port", "Sitemap", "Item":
             hostInfo[declaration] = value
             return true
         default:
@@ -34,19 +36,26 @@ class HostProperties : NSObject {
         }
     }
     
-    func testConnection() -> Bool {
-        
-        return true
-    }
-    
     internal func saveDataToAppCache() {
-       //UserDefaults.standard.set(hostInfo, forKey: "HostInfo")
+        for data in hostInfo {
+            userSettings.set(data.value, forKey: data.key)
+            //print(data.value)
+        }
     }
     
     internal func restoreDataFromAppCache() {
-        //if let data:Dictionary<String, AnyObject> = UserDefaults.dictionary("HostInfo") {
-        //    hostInfo = data
-        //}
+        if let hi = userSettings.string(forKey: "HostName"){
+            hostInfo["HostName"] = hi
+        }
+        if let p = userSettings.string(forKey: "Port"){
+            hostInfo["Port"] = p
+        }
+        if let site = userSettings.string(forKey: "Sitemap"){
+            hostInfo["Sitemap"] = site
+        }
+        if let it = userSettings.string(forKey: "Item"){
+            hostInfo["Item"] = it
+        }
     }
     
     internal func createLink() -> String?{
@@ -61,18 +70,20 @@ class HostProperties : NSObject {
             return nil
         }
     }
-    
-    /*private var hostInfo: Dictionary <String, HostProps> = [
-        "HostName" : .HostName(IP(ipString: String)),
-        "Port" : .Port,
-        "Sitemap" : .Sitemap,
-        "Item" : .Item
-    ]
-
-    private enum HostProps {
-        case HostName((String))
-        case Port
-        case Sitemap
-        case Item
-    }*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

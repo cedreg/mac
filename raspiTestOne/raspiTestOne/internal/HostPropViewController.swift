@@ -16,8 +16,36 @@ class HostPropViewController: UIViewController {
     @IBOutlet weak var sitemapFld: UITextField!
     @IBOutlet weak var itemFld: UITextField!
     @IBOutlet weak var infoFld: UILabel!
+    let hostP: HostProperties = HostProperties()
     
-    @IBAction func saveAtestBtn(_ sender: UIButton) {
+    @IBAction func btnCall(_ sender: UIButton) {
+        
+        let btn = sender.currentTitle!
+        switch btn {
+        case "Show Host":
+            hostnameFld.text = hostP.getInfo(declaration: "HostName")
+            portFld.text = hostP.getInfo(declaration: "Port")
+            sitemapFld.text = hostP.getInfo(declaration: "Sitemap")
+            itemFld.text = hostP.getInfo(declaration: "Item")
+            
+            infoFld.text? = "ShowHost"
+        case "Save Host":
+            _ = hostP.addInfo(declaration: "HostName", value: hostnameFld.text!)
+            _ = hostP.addInfo(declaration: "Port", value: portFld.text!)
+            _ = hostP.addInfo(declaration: "Sitemap", value: sitemapFld.text!)
+            _ = hostP.addInfo(declaration: "Item", value: itemFld.text!)
+            hostP.saveDataToAppCache()
+            
+            infoFld.text? = "SaveHost"
+        case "Restore Host":
+            hostP.restoreDataFromAppCache()
+            
+            infoFld.text? = "RestoreHost"
+        default:
+            infoFld.text? = "Error occured while buttons are hit"
+        }
+        
+        
     }
     
     override func viewDidLoad() {
