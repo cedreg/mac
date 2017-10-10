@@ -43,19 +43,30 @@ class HostProperties : NSObject {
         }
     }
     
-    internal func restoreDataFromAppCache() {
+    internal func restoreDataFromAppCache() -> Bool {
+        var allDataCouldBeLoaded: Bool = true
         if let hi = userSettings.string(forKey: "HostName"){
             hostInfo["HostName"] = hi
+        } else {
+            allDataCouldBeLoaded = false
         }
         if let p = userSettings.string(forKey: "Port"){
             hostInfo["Port"] = p
+        } else {
+            allDataCouldBeLoaded = false
         }
         if let site = userSettings.string(forKey: "Sitemap"){
             hostInfo["Sitemap"] = site
+        } else {
+            allDataCouldBeLoaded = false
         }
         if let it = userSettings.string(forKey: "Item"){
             hostInfo["Item"] = it
+        } else {
+            allDataCouldBeLoaded = false
         }
+        
+        return allDataCouldBeLoaded
     }
     
     internal func createLink() -> String?{

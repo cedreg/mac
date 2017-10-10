@@ -37,7 +37,7 @@ class InternalPageViewController: UIPageViewController, UIPageViewControllerData
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,7 +45,7 @@ class InternalPageViewController: UIPageViewController, UIPageViewControllerData
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
     
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -68,7 +68,4 @@ class InternalPageViewController: UIPageViewController, UIPageViewControllerData
         
         return viewControllerList[nextIndex]
     }
-    
-    
-    
 }

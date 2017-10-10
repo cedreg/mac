@@ -59,4 +59,32 @@ class NetworkInfo : NSObject {
         }
     }
     
+    func saveSSID() -> Bool {
+        if doc["BSSID"] != "" {
+            UserDefaults.standard.set(doc["BSSID"], forKey: "WirelessMAC")
+        } else {
+            return false
+        }
+        if doc["SSID"] != "" {
+            UserDefaults.standard.set(doc["SSID"], forKey: "WirelessSSID")
+        } else {
+            return false
+        }
+        return true
+    }
+    
+    func restoreSSID() -> Bool {
+        if let mac = UserDefaults.standard.string(forKey: "WirelessMAC") {
+            doc["BSSID"] = mac
+        } else {
+            return false
+        }
+        if let ssid = UserDefaults.standard.string(forKey: "WirelessSSID") {
+            doc["SSID"] = ssid
+        } else {
+            return false
+        }
+        return true
+    }
+    
 }

@@ -10,14 +10,25 @@ import UIKit
 
 class NetworkViewController: UIViewController {
     
-    var userSettings: UserDefaults = UserDefaults()
     let NWInfo = NetworkInfo()
     
-    @IBOutlet weak var infoLabel: UILabel!
-    
+    @IBOutlet weak var infoLabel: UILabel! {
+        didSet {
+            infoLabel.lineBreakMode = .byWordWrapping
+            infoLabel.numberOfLines = 0
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if NWInfo.restoreSSID() {
+            infoLabel.text? = "Gespeicherte Netzwerkdaten erfolgreich geladen\n\n"
+            infoLabel.text?.append("SSID: \(NWInfo.getSSID()!)\n")
+            infoLabel.text?.append("MAC: \(NWInfo.getBSSID()!)")
+        } else {
+            infoLabel.text? = "Bitte Netzwerk auswählen"
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,13 +38,9 @@ class NetworkViewController: UIViewController {
     }
     
     @IBAction func ssidBtn(_ sender: UIButton) {
-        infoLabel.lineBreakMode = .byWordWrapping
-        infoLabel.numberOfLines = 0
-        
         if NWInfo.isConnected() {
             if let networkSSID = NWInfo.getSSID(){
                 infoLabel.text? = "SSID: \(networkSSID)\n"
-                
             }
             if let networkBSSID = NWInfo.getBSSID(){
                 infoLabel.text?.append("MAC: \(networkBSSID)")
@@ -45,9 +52,15 @@ class NetworkViewController: UIViewController {
 
     
     @IBAction func selectNWBtn(_ sender: UIButton) {
-        let HTTP = HTTPManager()
-        
-        HTTP.requestPresenceCount("http://192.168.178.162:8080/rest/items/DEMONUM")
+        if NWInfo.saveSSID() {
+            infoLabel.text?.append("\n\nErfolgreich gespeichert") // TODO: more then one append possible
+        } else {
+            infoLabel.text? = "Konnte nicht speichern, bitte erneut versuchen"
+        }
+//
+//        let HTTP = HTTPManager()
+//
+//        HTTP.requestPresenceCount("http://192.168.178.162:8080/rest/items/DEMONUM")
     }
     
     

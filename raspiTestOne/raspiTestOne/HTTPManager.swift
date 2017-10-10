@@ -13,14 +13,13 @@ class HTTPManager : NSObject {
      internal func requestPresenceCount(_ url: String) {
         guard let address = URL(string: url) else {return}
         
-        URLSession.shared.dataTask(with: address) { (data, response, error) in
+        URLSession.shared.dataTask(with: address) { (data, response, error) in // consider using [weak weakSelf = self] for increasePresenceCount
             
             guard let data = data else {return}
             do {
                 guard let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: AnyObject] else {return}
                 let numberItem = OHNumberItem(json: jsonResult)
-                
-                increasePresenceCount(numberItem)
+                self.increasePresenceCount(numberItem)
             } catch let jsonErr {
                 print("Error reading json", jsonErr)
             }
@@ -29,10 +28,20 @@ class HTTPManager : NSObject {
     }
     
     internal func increasePresenceCount(_ OHNI: OHNumberItem) {
-    
-    
+
+        let requestURL = URL(string: OHNI.link + "/state")!
+
+        var request = URLRequest(url: requestURL)
+        request.addValue("text/plain", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "PUT"
+        request.httpBody = String(OHNI.state + 1).data(using: String.Encoding.utf8)
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request)
+        task.resume()
     
     }
+    
 }
 
 

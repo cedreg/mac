@@ -20,6 +20,7 @@
 		00D7A0F81F84CA7B00932A0D /* HostProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0F71F84CA7B00932A0D /* HostProperties.swift */; };
 		00D7A0FA1F84DA9C00932A0D /* InternalHostProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0F91F84DA9C00932A0D /* InternalHostProperties.swift */; };
 		00D7A0FC1F8518ED00932A0D /* DispatcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7A0FB1F8518ED00932A0D /* DispatcherViewController.swift */; };
+		82B29A061F8CDC3900D4AC8B /* DispatcherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B29A051F8CDC3900D4AC8B /* DispatcherController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		00D7A0F71F84CA7B00932A0D /* HostProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProperties.swift; sourceTree = "<group>"; };
 		00D7A0F91F84DA9C00932A0D /* InternalHostProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalHostProperties.swift; sourceTree = "<group>"; };
 		00D7A0FB1F8518ED00932A0D /* DispatcherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherViewController.swift; sourceTree = "<group>"; };
+		82B29A051F8CDC3900D4AC8B /* DispatcherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				00D7A0F71F84CA7B00932A0D /* HostProperties.swift */,
 				00D7A0F91F84DA9C00932A0D /* InternalHostProperties.swift */,
 				00D7A0FB1F8518ED00932A0D /* DispatcherViewController.swift */,
+				82B29A051F8CDC3900D4AC8B /* DispatcherController.swift */,
 			);
 			path = internal;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				00D7A0FC1F8518ED00932A0D /* DispatcherViewController.swift in Sources */,
 				00B5DF561F8242ED00D716CF /* AppDelegate.swift in Sources */,
 				0038C6E41F8A73B300E8F274 /* HTTPManager.swift in Sources */,
+				82B29A061F8CDC3900D4AC8B /* DispatcherController.swift in Sources */,
 				00667AF31F83E0CF00703CD3 /* ExternalPageViewController.swift in Sources */,
 				00D7A0FA1F84DA9C00932A0D /* InternalHostProperties.swift in Sources */,
 			);

@@ -16,7 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if let vc = window?.rootViewController as? UITabBarController {                         // get "root" tabbar
+            if let vc1 = vc.viewControllers?[0] as? InternalPageViewController{                 // get first controller (page view cont)
+                if let tmp = vc1.viewControllerList[2] as? DispatcherViewController {           // get third view cont inside the page view cont
+                    _ = tmp.performTask(what: "increase")                                       // run method perform task
+                    completionHandler(.newData)
+                } else { print("error->internalTOdispatcher"); completionHandler(.failed)}
+            } else {print("error->tabbarTOinternal"); completionHandler(.failed)}
+        } else {print("error->rootTOtabbar"); completionHandler(.failed)}
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

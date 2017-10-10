@@ -12,14 +12,24 @@ class DispatcherViewController: UIViewController {
 
     @IBOutlet weak var secondsFld: UITextField!
     
+    let d = DispatcherController()
+    
     @IBAction func switchChanged(_ sender: UISwitch) {
-        
+        if sender.isOn {
+            d.isActive = true
+            if let tVal = Int(secondsFld.text!) {
+                d.setTimerValue(tVal)
+                d.save()
+            }
+        } else {
+            d.isActive = false
+        }
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        d.restore()
+        updateUI()
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +38,25 @@ class DispatcherViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func updateUI(){
+        if d.getTimerValue() == -1 {
+            secondsFld.text? = ""
+        } else {
+            secondsFld.text? = String(d.getTimerValue())
+        }
+    }
+    
+    func performTask(what: String) -> Bool {
+        switch what {
+        case "increase":
+            print("increaseCounterByOne")
+            return true
+        default:
+            print("error, \(what) is no usable option")
+            return false
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
